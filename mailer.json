@@ -1,0 +1,10 @@
+{ 
+	"mailer": { 
+		"mail_from": "FromMail@id.com", 
+		"mail_to": "To@mailid.com", 
+		"smtp_address": "localhost", 
+		"smtp_port": "25", 
+		"smtp_domain": "localhost"
+	} 
+}
+

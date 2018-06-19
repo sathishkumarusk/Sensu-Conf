@@ -1,0 +1,9 @@
+{ 
+	"handlers": { 
+		"mailer": { 
+			"type": "pipe", 
+			"command": "/opt/sensu/embedded/bin/handler-mailer.rb", 
+			"serverties" : ["critical", "ok"] 
+} 
+}
+}

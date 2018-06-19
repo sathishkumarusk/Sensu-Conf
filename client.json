@@ -1,0 +1,14 @@
+{ 
+"client": { 
+"name": "ThisIsTestServerCient", 
+"address": "127.0.0.1", 
+"environment": "Test", 
+"subscriptions": [ 
+"demo" 
+], 
+"socket": { 
+"bind": "127.0.0.1", 
+"port": 3030 
+} 
+} 
+}
