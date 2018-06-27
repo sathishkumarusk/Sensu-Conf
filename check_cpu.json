@@ -1,11 +1,31 @@
 { 
-	"checks": { 
-		"check-cpu": { 
-			"handlers": ["mailer"], 
-			"command": "/opt/sensu/embedded/bin/check-cpu.rb -w 80 -c 90 ", 
-			"interval": 10, 
-			"occurrences": 1, 
-			"subscribers": [ "demo" ] 
-} 
-} 
+ "checks": { 
+  "new-disk": { 
+   "handlers": ["mailer"], 
+   "command": "/opt/sensu/embedded/bin/check-disk-usage.rb  -w 80 -c 90 ", 
+   "interval": 60, 
+   "occurrences": 1, 
+   "refresh": 20, 
+   "subscribers": ["test"], 
+   "notification": "Sensu Server disk full" 
+  }, 
+  "new-CPU": { 
+   "handlers": ["mailer"], 
+   "command": "/opt/sensu/embedded/bin/check-cpu.rb -w 70 -c 90 ", 
+   "interval": 60, 
+   "occurrences": 1, 
+   "refresh": 20, 
+   "subscribers": ["test"], 
+   "notification": "Web Server CPU High" 
+  }, 
+  "new-HTTP": { 
+   "handlers": ["mailer"], 
+   "command": "/opt/sensu/embedded/bin/check-ports.rb -p 80 ", 
+   "interval": 60, 
+   "occurrences": 1, 
+   "refresh": 20, 
+   "subscribers": ["test"], 
+   "notification": "Web server HTTP Not Running" 
+  } 
+ } 
 }
